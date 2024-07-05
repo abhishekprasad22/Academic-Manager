@@ -9,28 +9,32 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            <div class="subjects">
-                <h2>Your Subjects</h2>
-                <ul>
-                    <button><li>Subject 1</li></button>
-                    <button><li>Subject 2</li></button>
-                    <button><li>Subject 3</li></button>
-                    <button><li>Subject 4</li></button>
-                </ul>
+            <div class="section">
+                <h2 class="section-title">Your Subjects</h2>
+                <div class="section-content">
+                    <button class="subject-button" data-subject="1">Subject 1</button>
+                    <button class="subject-button" data-subject="2">Subject 2</button>
+                    <button class="subject-button" data-subject="3">Subject 3</button>
+                    <button class="subject-button" data-subject="4">Subject 4</button>
+                </div>
             </div>
-            <div class="uploads">
-                <h2>Your Uploads</h2>
-                <ul>
-                    <li>PYQ</li>
-                    <li>Study Material</li>
-                    <li>Assignment</li>
-                </ul>
+            <div class="section">
+                <h2 class="section-title">Your Uploads</h2>
+                <div class="section-content">
+                    <button>PYQ</button>
+                    <button>Study Material</button>
+                    <button>Assignment</button>
+                </div>
             </div>
-            <div class="attendance">
-                <h2>Attendance</h2>
+            <div class="section">
+                <h2 class="section-title">Attendance</h2>
+                <div class="section-content">
+                    <p>Attendance details go here...</p>
+                </div>
             </div>
         </div>
-        <div class="main-content">
+        <div class="main-content" id="main-content">
+            <!-- Default content for Subject 1 -->
             <div class="header">
                 <h1>Subject 1</h1>
                 <div class="search-bar">
@@ -40,7 +44,7 @@
                     <span>Professor's Name</span>
                 </div>
             </div>
-            <div class="student-list">
+            <div class="student-list" id="subject-content">
                 <table>
                     <tr>
                         <th>Student Name</th>
@@ -52,49 +56,11 @@
                         <td>Roll Number</td>
                         <td><a href="#">More Details</a></td>
                     </tr>
-                    <tr>
-                        <td>Student Name 2</td>
-                        <td>Roll Number</td>
-                        <td><a href="#">More Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>Student Name 3</td>
-                        <td>Roll Number</td>
-                        <td><a href="#">More Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>Student Name 4</td>
-                        <td>Roll Number</td>
-                        <td><a href="#">More Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>Student Name 5</td>
-                        <td>Roll Number</td>
-                        <td><a href="#">More Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>Student Name 6</td>
-                        <td>Roll Number</td>
-                        <td><a href="#">More Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>Student Name 7</td>
-                        <td>Roll Number</td>
-                        <td><a href="#">More Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>Student Name 8</td>
-                        <td>Roll Number</td>
-                        <td><a href="#">More Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>Student Name 9</td>
-                        <td>Roll Number</td>
-                        <td><a href="#">More Details</a></td>
-                    </tr>
+                    <!-- Add more students here -->
                 </table>
             </div>
         </div>
     </div>
+    <script src="professorAccount.js"></script>
 </body>
 </html>

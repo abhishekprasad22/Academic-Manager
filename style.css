@@ -48,6 +48,8 @@
     position: relative;
     top: 5px;
     left: 200px;
+    cursor: pointer;
+
 }
 
 #signup{
@@ -80,6 +82,8 @@
     position: relative;
     top: 5px;
     left: 200px;
+    cursor: pointer;
+
 }
 
 img {
@@ -89,6 +93,15 @@ img {
 .container {
     display: inline-block;
 }
+
+.button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
 
 /* Existing CSS code remains unchanged */
 

@@ -1,59 +1,98 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .header h1 {
-    font-size: 2em;
-    margin-bottom: 5px;
-  }
-  
-  .header h2 {
-    font-size: 1.5em;
-    color: #888;
-  }
-  
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: azure;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+.header h2 {
+  font-size: 1.5em;
+  color: #888;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.student-photo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.student-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.details {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.details p {
+  margin-bottom: 5px;
+}
+
+.cie-marks table,
+.sgpa table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cie-marks th, .cie-marks td,
+.sgpa th, .sgpa td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.cie-marks th, .sgpa th {
+  background-color: #f2f2f2;
+}
+
+.downloadSection button {
+  margin: 5px 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.downloadSection button a {
+  color: white;
+  text-decoration: none;
+}
+
+.downloadSection button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
   .info {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    grid-template-columns: 1fr;
   }
-  
-  .left-side,
-  .right-side {
-    width: 45%;
-  }
-  
-  .student-photo {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .student-photo img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .details {
-    border: 1px solid #ddd;
-    padding: 10px;
-  }
-  
-  .details p {
-    margin-bottom: 5px;
-  }
-  
+}
