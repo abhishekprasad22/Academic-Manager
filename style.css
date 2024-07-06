@@ -1,4 +1,4 @@
-#maintag{
+#maintag {
     background-color: #D9D9D9;
     height: 185px;
     width: 919px;
@@ -14,21 +14,22 @@
     position: relative;
     top: 70px;
     left: 240px;
+}
 
- }
-
- #login {
+#login, #signup {
     background-color: #D9D9D9;
     height: 58px;
     width: 409px;
     position: relative;
-    left: 526px;
-    top: 300px;
+    left: 263px;
+    margin-top: 20px;
     border-radius: 10px;
     display: inline-block;
+    vertical-align: top;
 }
 
-#login > div{
+
+#login > div, #signup > div {
     color: blue;
     font-weight: bold;
     font-size: 24px;
@@ -36,10 +37,9 @@
     top: 15px;
     left: 80px;
     font-family: sans-serif;
-
 }
 
-#login > button{
+#login > button, #signup > button {
     background-color: blue;
     border-radius: 20px;
     width: 201px;
@@ -49,7 +49,26 @@
     top: 5px;
     left: 200px;
     cursor: pointer;
+}
 
+.buttonContainer {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    position: absolute;
+    top: 0;
+    left: 420px; /* Adjusted for positioning the button container */
+}
+
+#login {
+    background-color: #D9D9D9;
+    height: 58px;
+    width: 409px;
+    position: relative;
+    left: 526px;
+    top: 300px;
+    border-radius: 10px;
+    display: inline-block;
 }
 
 #signup{
@@ -63,27 +82,19 @@
     display: inline-block;
 }
 
-#signup > div{
-    color: blue;
-    font-size: 24px;
-    font-weight: bold;
-    position: absolute;
-    top: 15px;
-    left: 80px;
-    font-family: sans-serif;
-}
-
-#signup > button{
-    background-color: blue;
-    border-radius: 20px;
-    width: 201px;
-    height: 46px;
+.buttonContainer > button {
+    background-color: #4CAF50; /* Green */
+    border: none;
     color: white;
-    position: relative;
-    top: 5px;
-    left: 200px;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 5px 0;
     cursor: pointer;
-
+    border-radius: 12px;
+    width: 200px; /* Adjusted width for styling */
 }
 
 img {
@@ -100,8 +111,6 @@ img {
     font-size: 14px;
     cursor: pointer;
 }
-
-
 
 /* Existing CSS code remains unchanged */
 
@@ -135,16 +144,24 @@ img {
         left: 50%;
     }
 
-    #signup > div{
+    #signup > div {
         left: 20px;
     }
 
-    #login > div{
+    #login > div {
         left: 20px;
     }
 
     #signup {
-        top: 100px;
+        top: 120px;
+    }
+
+    .buttonContainer {
+        display: block;
+        margin-left: 0;
+    }
+
+    .buttonContainer > button {
+        width: 100%;
     }
 }
-
