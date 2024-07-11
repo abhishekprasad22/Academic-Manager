@@ -112,8 +112,6 @@ img {
     cursor: pointer;
 }
 
-/* Existing CSS code remains unchanged */
-
 /* Media query for screens with a maximum width of 768px (tablets) */
 @media only screen and (max-width: 768px) {
     #maintag {
