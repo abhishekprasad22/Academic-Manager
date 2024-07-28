@@ -41,77 +41,393 @@ document.addEventListener('DOMContentLoaded', function() {
             case '1':
                 content = `
                     <div class="header">
-                        <h1>Subject 1</h1>
-                        <div class="search-bar">
-                            <input type="text" placeholder="Search">
-                        </div>
-                        <div class="profile">
-                            <span>Professor's Name</span>
-                        </div>
-                    </div>
-                    <div class="student-list">
-                        <table>
-                            <tr>
-                                <th>Student Name</th>
-                                <th>Roll Number</th>
-                                <th>More Details</th>
-                            </tr>
-                            <tr>
-                                <td>Student Name 1</td>
-                                <td>Roll Number</td>
-                                <td><a href="#">More Details</a></td>
-                            </tr>
-                            <!-- Add more students here -->
-                        </table>
-                    </div>
+                <h1>Subject 1</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="profile">
+                    <span>Professor's Name</span>
+                </div>
+            </div>
+            <div class="student-list" id="subject-content">
+                <table>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Roll Number</th>
+                        <th>More Details</th>
+                    </tr>
+                    <tr>
+                        <td>Student Name 1</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 2</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 3</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 4</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 5</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 6</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 7</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 8</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 9</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 10</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 11</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 12</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 13</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 14</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 15</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <!-- Add more students here -->
+                </table>
+            </div>
                 `;
                 break;
             case '2':
                 content = `
                     <div class="header">
-                        <h1>Subject 2</h1>
-                        <div class="search-bar">
-                            <input type="text" placeholder="Search">
-                        </div>
-                        <div class="profile">
-                            <span>Professor's Name</span>
-                        </div>
-                    </div>
-                    <div class="student-list">
-                        <p>Content for Subject 2</p>
-                    </div>
+                <h1>Subject 2</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="profile">
+                    <span>Professor's Name</span>
+                </div>
+            </div>
+            <div class="student-list" id="subject-content">
+                <table>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Roll Number</th>
+                        <th>More Details</th>
+                    </tr>
+                    <tr>
+                        <td>Student Name 1</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 2</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 3</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 4</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 5</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 6</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 7</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 8</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 9</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 10</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 11</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 12</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 13</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 14</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 15</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <!-- Add more students here -->
+                </table>
+            </div>
                 `;
                 break;
             case '3':
                 content = `
                     <div class="header">
-                        <h1>Subject 3</h1>
-                        <div class="search-bar">
-                            <input type="text" placeholder="Search">
-                        </div>
-                        <div class="profile">
-                            <span>Professor's Name</span>
-                        </div>
-                    </div>
-                    <div class="student-list">
-                        <p>Content for Subject 3</p>
-                    </div>
+                <h1>Subject 3</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="profile">
+                    <span>Professor's Name</span>
+                </div>
+            </div>
+            <div class="student-list" id="subject-content">
+                <table>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Roll Number</th>
+                        <th>More Details</th>
+                    </tr>
+                    <tr>
+                        <td>Student Name 1</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 2</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 3</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 4</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 5</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 6</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 7</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 8</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 9</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 10</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 11</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 12</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 13</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 14</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 15</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <!-- Add more students here -->
+                </table>
+            </div>
                 `;
                 break;
             case '4':
                 content = `
                     <div class="header">
-                        <h1>Subject 4</h1>
-                        <div class="search-bar">
-                            <input type="text" placeholder="Search">
-                        </div>
-                        <div class="profile">
-                            <span>Professor's Name</span>
-                        </div>
-                    </div>
-                    <div class="student-list">
-                        <p>Content for Subject 4</p>
-                    </div>
+                <h1>Subject 4</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="profile">
+                    <span>Professor's Name</span>
+                </div>
+            </div>
+            <div class="student-list" id="subject-content">
+                <table>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Roll Number</th>
+                        <th>More Details</th>
+                    </tr>
+                    <tr>
+                        <td>Student Name 1</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 2</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 3</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 4</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 5</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 6</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 7</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 8</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 9</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 10</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 11</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 12</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 13</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 14</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student Name 15</td>
+                        <td>Roll Number</td>
+                        <td><a href="#">More Details</a></td>
+                    </tr>
+                    <!-- Add more students here -->
+                </table>
+            </div>
                 `;
                 break;
         }
