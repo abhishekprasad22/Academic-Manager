@@ -39,7 +39,6 @@ document.getElementById('signup').addEventListener('click', function() {
         window.location.href = 'notice.html'; // Change this to your teacher signup page
     };
     
-    
     // Create the second additional button
     let button2 = document.createElement('button');
     button2.innerText = 'Sign Up as a Student';
@@ -51,6 +50,4 @@ document.getElementById('signup').addEventListener('click', function() {
     // Append the buttons to the container
     buttonContainer.appendChild(button1);
     buttonContainer.appendChild(button2);
-
-    
 });
