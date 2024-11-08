@@ -31,6 +31,84 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+
+
+
+
+
+
+
+
+    // For popup window:
+
+    // Get the button element that opens the popup
+    const openPopupBtn = document.getElementById('open-popup');
+    // Get the popup element
+    const popup = document.getElementById('popup');
+    // Get the close button inside the popup
+    const closeBtn = document.querySelector('.close-button');
+    // Get the element where the content will be inserted inside the popup
+    const popupInnerContent = document.getElementById('popup-inner-content');
+
+    // Add a click event listener to the open popup button
+    openPopupBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default action (useful if button is inside a form)
+        
+        // Fetch the HTML content from the specified file
+        fetch('../StudentMarks.html')
+            .then(response => response.text()) // Convert the response to text
+            .then(data => {
+                popupInnerContent.innerHTML = data; // Insert the fetched HTML content into the popup
+
+                // Create a new link element for the CSS file
+                const link = document.createElement('link');
+                link.rel = 'stylesheet'; // Set the relationship to stylesheet
+                link.href = '../StudentMarks.css'; // Set the href to the CSS file
+                document.head.appendChild(link); // Append the link to the document's head
+                
+                popup.style.display = 'block'; // Display the popup
+
+                
+            });
+    });
+
+    // Add a click event listener to the close button
+    closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none'; // Hide the popup
+    });
+
+    // Add a click event listener to the window to close the popup when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === popup) { // Check if the click was outside the popup content
+            popup.style.display = 'none'; // Hide the popup
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Defines the function to load content based on the subject ID
     function loadSubjectContent(subjectId) {
         // Initializes a variable to store the HTML content for the subject
