@@ -9,14 +9,16 @@
 <body>
     <div class="login-container">
         <h2>Login as a Student</h2>
-        <form action="./Student/studentAccount.html" method="post">
-           Enter your ASTU Roll no. : <input type="text" id="userId" name="userId"  required>
-           <br>
-           Enter your Password : <input type="password" id="password" name="password"  required>
-           <a href="#">Forgot Password?</a>
+        <form action="/studentLogin" method="post">
+            <label for="userId">Enter your ASTU Roll no. :</label>
+            <input type="text" id="userId" name="userId" required>
+            <br>
+            <label for="password">Enter your Password :</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <a href="#">Forgot Password?</a>
             <input type="submit" value="Login">
-        </form>
-        
+         </form>
     </div>
 </body>
 </html>
