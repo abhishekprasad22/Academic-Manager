@@ -29,7 +29,7 @@ app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views')); // Make sure the 'views' directory path is correct
 
 // Serve static files from the "public" directory
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Define routes for specific HTML files
 app.get("/", (req, res) => {
@@ -118,6 +118,40 @@ app.get("/studentDashboard", async (req, res) => {
     res.status(500).send("Error fetching student details");
   }
 });
+
+
+// Professor login
+app.post("/professorLogin", async (req, res) => {
+  const { userId, password } = req.body;
+
+  try {
+    // Query to check if the professor's credentials are correct
+    const result = await pool.query(
+      "SELECT * FROM teacher_login WHERE username = $1 AND password = $2",
+      [userId, password]
+    );
+
+    // Log the query result to check if data is fetched correctly
+    console.log("Professor Query Result:", result.rows);
+
+    if (result.rows.length > 0) {
+      // Redirect to the professor's account page upon successful login
+      res.redirect("/professorDashboard");
+    } else {
+      // If credentials do not match, send an error message
+      res.send("Invalid Username or Password");
+    }
+  } catch (err) {
+    console.error("Database Query Error:", err);
+    res.status(500).send("Error querying the database");
+  }
+});
+
+// Route to render the professor dashboard (or account page)
+app.get("/professorDashboard", (req, res) => {
+  res.sendFile(__dirname + "/public/Teacher/professorAccount.html");
+});
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
