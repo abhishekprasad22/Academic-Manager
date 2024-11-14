@@ -169,17 +169,18 @@ document.addEventListener('DOMContentLoaded', function () {
         mainContent.innerHTML = content;
     }
 
-    // Function to generate student rows for the table
-    function generateStudentRows() {
-        const studentRows = [];
-        for (let i = 1; i <= 15; i++) {
-            studentRows.push(`
-            <tr>
-                <td>Student Name ${i}</td>
-                <td>Roll Number</td>
-                <td><a href="#">More Details</a></td>
-            </tr>`);
-        }
-        return studentRows.join('');
+// Function to generate student rows for the table
+function generateStudentRows() {
+    const studentRows = [];
+    for (let i = 1; i <= 20; i++) {
+        studentRows.push(`
+        <tr>
+            <td>Student Name ${i}</td>
+            <td>Roll Number</td>
+            <td><a href="../StudentMarks.html" target="_blank">More Details</a></td>
+        </tr>`);
     }
+    return studentRows.join('');
+}
+
 });

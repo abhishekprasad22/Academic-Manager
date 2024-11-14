@@ -70,7 +70,10 @@
               <tr><td>6th Sem.</td><td><%= student.semester6_sgpa %></td></tr>
               <tr><td>7th Sem.</td><td><%= student.semester7_sgpa %></td></tr>
               <tr><td>8th Sem.</td><td><%= student.semester8_sgpa %></td></tr>
-              <tr><td><b>Current CGPA</b></td><td><b><%= student.current_cgpa %></b></td></tr>
+              <tr>
+                <td><b>Calculated CGPA</b></td>
+                <td id="calculated-cgpa"><b></b></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -84,5 +87,32 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function calculateCGPA() {
+      // Assuming SGPA for each semester is stored in the student object
+      const sgpas = [
+        <%= student.semester1_sgpa %>,
+        <%= student.semester2_sgpa %>,
+        <%= student.semester3_sgpa %>,
+        <%= student.semester4_sgpa %>,
+        <%= student.semester5_sgpa %>,
+        <%= student.semester6_sgpa %>,
+        <%= student.semester7_sgpa %>,
+        <%= student.semester8_sgpa %>
+      ];
+      
+      // Filter out any NaN values and calculate the CGPA
+      const validSGPAs = sgpas.filter(sgpa => !isNaN(sgpa));
+      const totalSGPA = validSGPAs.reduce((sum, sgpa) => sum + sgpa, 0);
+      const cgpa = totalSGPA / validSGPAs.length;
+  
+      // Display the calculated CGPA
+      document.getElementById('calculated-cgpa').innerText = cgpa.toFixed(2); // Display with 2 decimal places
+    }
+  
+    // Call the function when the window loads
+    window.onload = calculateCGPA;
+  </script>
 </body>
 </html>
