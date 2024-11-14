@@ -65,8 +65,14 @@
                             <th>More Details</th>
                         </tr>
                     </thead>
-                    <tbody id="student-table-body">
-                        <!-- Student rows will be dynamically generated here -->
+                    <tbody>
+                        <% students.forEach(student => { %>
+                            <tr>
+                                <td><%= student.first_name %> <%= student.last_name %></td>
+                                <td><%= student.roll_no %></td>
+                                <td><a href="#" id="open-popup">More Details</a></td>
+                            </tr>
+                        <% }); %>
                     </tbody>
                 </table>
             </div>

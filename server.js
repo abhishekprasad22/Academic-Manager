@@ -148,8 +148,20 @@ app.post("/professorLogin", async (req, res) => {
 });
 
 // Route to render the professor dashboard (or account page)
-app.get("/professorDashboard", (req, res) => {
-  res.sendFile(__dirname + "/public/Teacher/professorAccount.html");
+app.get("/professorDashboard", async (req, res) => {
+  try {
+    // Query to fetch all students' names and roll numbers
+    const result = await pool.query("SELECT first_name, last_name, roll_no FROM students");
+
+    // Log the result to see if data is fetched
+    console.log("Students Query Result:", result.rows);
+
+    // Render the EJS template with the student data
+    res.render("professorAccount", { students: result.rows });
+  } catch (err) {
+    console.error("Database Query Error:", err);
+    res.status(500).send("Error fetching student details");
+  }
 });
 
 
