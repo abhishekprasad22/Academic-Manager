@@ -19,168 +19,171 @@ document.addEventListener('DOMContentLoaded', function () {
     // Selects all elements with the class "subject-button" and loops through them
     const subjectButtons = document.querySelectorAll('.subject-button');
     const mainContent = document.getElementById('main-content');
+    const attendanceButtons = document.querySelectorAll('.attendance-subject-button');
+    
+    // Add event listeners to subject buttons for loading content
     subjectButtons.forEach(button => {
-        // Adds a click event listener to each subject button element
         button.addEventListener('click', function () {
-            // Retrieves the subject ID from the button's data-subject attribute
             const subjectId = this.getAttribute('data-subject');
-            // Calls the function to load content based on the subject ID
             loadSubjectContent(subjectId);
         });
     });
 
+    // Add event listeners to attendance buttons for loading attendance table
+    attendanceButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const subjectId = this.getAttribute('data-subject');
+            loadAttendanceTable(subjectId);
+        });
+    });
+
     // For popup window:
-    // Get the button element that opens the popup
     const openPopupBtn = document.getElementById('open-popup');
-    // Get the popup element
     const popup = document.getElementById('popup');
-    // Get the close button inside the popup
     const closeBtn = document.querySelector('.close-button');
-    // Get the element where the content will be inserted inside the popup
     const popupInnerContent = document.getElementById('popup-inner-content');
 
-    // Add a click event listener to the open popup button
     openPopupBtn.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default action (useful if button is inside a form)
-        // Fetch the HTML content from the specified file
+        e.preventDefault();
         fetch('../StudentMarks.html')
-            .then(response => response.text()) // Convert the response to text
+            .then(response => response.text())
             .then(data => {
-                popupInnerContent.innerHTML = data; // Insert the fetched HTML content into the popup
-                // Create a new link element for the CSS file
+                popupInnerContent.innerHTML = data;
                 const link = document.createElement('link');
-                link.rel = 'stylesheet'; // Set the relationship to stylesheet
-                link.href = '../StudentMarks.css'; // Set the href to the CSS file
-                document.head.appendChild(link); // Append the link to the document's head
-                popup.style.display = 'block'; // Display the popup
+                link.rel = 'stylesheet';
+                link.href = '../StudentMarks.css';
+                document.head.appendChild(link);
+                popup.style.display = 'block';
             });
     });
 
-    // Add a click event listener to the close button
     closeBtn.addEventListener('click', () => {
-        popup.style.display = 'none'; // Hide the popup
+        popup.style.display = 'none';
     });
 
-    // Add a click event listener to the window to close the popup when clicking outside
     window.addEventListener('click', (e) => {
-        if (e.target === popup) { // Check if the click was outside the popup content
-            popup.style.display = 'none'; // Hide the popup
+        if (e.target === popup) {
+            popup.style.display = 'none';
         }
     });
 
-    // Defines the function to load content based on the subject ID
+    // Function to load regular subject content
     function loadSubjectContent(subjectId) {
-        // Initializes a variable to store the HTML content for the subject
         let content = '';
-
-        // Uses a switch statement to define different content for each subject based on the subject ID
         switch (subjectId) {
             case '1':
-                content = `
-                <div class="header">
-                    <h1>Subject 1</h1>
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search">
-                    </div>
-                    <div class="profile">
-                        <span>Professor's Name</span>
-                    </div>
-                </div>
-                <div class="student-list" id="subject-content">
-                    <table>
-                        <tr>
-                            <th>Student Name</th>
-                            <th>Roll Number</th>
-                            <th>More Details</th>
-                        </tr>
-                        ${generateStudentRows()}
-                    </table>
-                </div>`;
+                content = generateSubjectHTML(1);
                 break;
             case '2':
-                content = `
-                <div class="header">
-                    <h1>Subject 2</h1>
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search">
-                    </div>
-                    <div class="profile">
-                        <span>Professor's Name</span>
-                    </div>
-                </div>
-                <div class="student-list" id="subject-content">
-                    <table>
-                        <tr>
-                            <th>Student Name</th>
-                            <th>Roll Number</th>
-                            <th>More Details</th>
-                        </tr>
-                        ${generateStudentRows()}
-                    </table>
-                </div>`;
+                content = generateSubjectHTML(2);
                 break;
             case '3':
-                content = `
-                <div class="header">
-                    <h1>Subject 3</h1>
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search">
-                    </div>
-                    <div class="profile">
-                        <span>Professor's Name</span>
-                    </div>
-                </div>
-                <div class="student-list" id="subject-content">
-                    <table>
-                        <tr>
-                            <th>Student Name</th>
-                            <th>Roll Number</th>
-                            <th>More Details</th>
-                        </tr>
-                        ${generateStudentRows()}
-                    </table>
-                </div>`;
+                content = generateSubjectHTML(3);
                 break;
             case '4':
-                content = `
-                <div class="header">
-                    <h1>Subject 4</h1>
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search">
-                    </div>
-                    <div class="profile">
-                        <span>Professor's Name</span>
-                    </div>
-                </div>
-                <div class="student-list" id="subject-content">
-                    <table>
-                        <tr>
-                            <th>Student Name</th>
-                            <th>Roll Number</th>
-                            <th>More Details</th>
-                        </tr>
-                        ${generateStudentRows()}
-                    </table>
-                </div>`;
+                content = generateSubjectHTML(4);
                 break;
         }
-
-        // Updates the innerHTML of the "main-content" element with the generated content for the selected subject
         mainContent.innerHTML = content;
     }
 
-// Function to generate student rows for the table
-function generateStudentRows() {
-    const studentRows = [];
-    for (let i = 1; i <= 20; i++) {
-        studentRows.push(`
-        <tr>
-            <td>Student Name ${i}</td>
-            <td>Roll Number</td>
-            <td><a href="../StudentMarks.html" target="_blank">More Details</a></td>
-        </tr>`);
+    // Generate the subject-specific HTML content dynamically
+    function generateSubjectHTML(subjectId) {
+        return `
+        <div class="header">
+            <h1>Subject ${subjectId}</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="profile">
+                <span>Professor's Name</span>
+            </div>
+        </div>
+        <div class="student-list" id="subject-content">
+            <table>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Roll Number</th>
+                    <th>More Details</th>
+                </tr>
+                ${generateStudentRows()}
+            </table>
+        </div>`;
     }
-    return studentRows.join('');
-}
 
+    // Function to dynamically generate the attendance table for a specific subject
+    function loadAttendanceTable(subjectId) {
+        mainContent.innerHTML = `
+        <div class="header">
+            <h1>Attendance for Subject ${subjectId}</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search" id="search-input">
+            </div>
+            <div class="profile">
+                <span>Professor's Name</span>
+            </div>
+        </div>
+        <div class="student-list" id="subject-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Roll Number</th>
+                        <th>Classes Attended</th>
+                        <th>Total Classes</th>
+                        <th>Percentage</th>
+                        <th>Save Changes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${generateAttendanceRows()}
+                </tbody>
+            </table>
+        </div>`;
+    }
+
+    // Generate rows for the regular subject content
+    function generateStudentRows() {
+        const studentRows = [];
+        for (let i = 1; i <= 20; i++) {
+            studentRows.push(`
+            <tr>
+                <td>Student Name ${i}</td>
+                <td>Roll Number</td>
+                <td><a href="../StudentMarks.html" target="_blank">More Details</a></td>
+            </tr>`);
+        }
+        return studentRows.join('');
+    }
+
+    // Generate rows for the attendance table
+    function generateAttendanceRows() {
+        const rows = [];
+        for (let i = 1; i <= 20; i++) {
+            rows.push(`
+            <tr>
+                <td>Student Name ${i}</td>
+                <td>Roll Number</td>
+                <td><input type="number" id="a${i}"></td>
+                <td><input type="number" id="b${i}"></td>
+                <td><input type="text" class="res" id="result${i}" disabled></td>
+                <td><button class="per" onclick="calculatePercentage(${i})">Save</button></td>
+            </tr>`);
+        }
+        return rows.join('');
+    }
+
+    // Function to calculate and display attendance percentage
+    window.calculatePercentage = (studentId) => {
+        const number1 = parseFloat(document.getElementById(`a${studentId}`).value);
+        const number2 = parseFloat(document.getElementById(`b${studentId}`).value);
+        const resultField = document.getElementById(`result${studentId}`);
+        
+        if (isNaN(number1) || isNaN(number2) || number2 === 0) {
+            alert("Please enter valid numbers.");
+            return;
+        }
+        const percentage = (number1 / number2) * 100;
+        resultField.value = `${percentage.toFixed(2)}%`;
+    }
 });
