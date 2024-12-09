@@ -59,9 +59,46 @@
                 </div>
             </div>
             <br>
-            <input type="submit" value="SAVE">
+            <input type="submit" id="saveButton" value="SAVE">
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const saveButton = document.getElementById('saveButton');
+            let isEditing = false;
+
+            saveButton.addEventListener('click', function () {
+                const cie1 = document.getElementById('cie1').value;
+                const cie2 = document.getElementById('cie2').value;
+                const cie3 = document.getElementById('cie3').value;
+                const asgn = document.getElementById('asgn').value;
+
+                if (!isEditing) {
+                    // Save the values (you can implement your save logic here)
+                    console.log("Saving CIE Marks:", cie1, cie2, cie3, asgn);
+                    
+                    // Change button text to "CHANGE"
+                    saveButton.value = "CHANGE";
+                    isEditing = true;
+
+                    // Optionally, disable the input fields after saving
+                    document.querySelectorAll('input[type="number"]').forEach(input => {
+                        input.disabled = true;
+                    });
+                } else {
+                    // Change button text back to "SAVE"
+                    saveButton.value = "SAVE";
+                    isEditing = false;
+
+                    // Enable the input fields for editing
+                    document.querySelectorAll('input[type="number"]').forEach(input => {
+                        input.disabled = false;
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -70,20 +70,12 @@
                             <tr>
                                 <td><%= student.first_name %> <%= student.last_name %></td>
                                 <td><%= student.roll_no %></td>
-                                <td><a href="#" id="open-popup">More Details</a></td>
+                                <td><a href="/StudentMarks.html">More Details</a></td>
                             </tr>
                         <% }); %>
                     </tbody>
                 </table>
             </div>
-        </div>
-    </div>
-
-    <!-- Popup for Student Details -->
-    <div id="popup" class="popup" aria-hidden="true">   
-        <div class="popup-content">
-            <button class="close-button" aria-label="Close">&times;</button>
-            <div id="popup-inner-content"></div>
         </div>
     </div>
 
