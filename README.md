@@ -75,7 +75,20 @@ Follow these steps to set up the project locally:
         PORT=3000
         ```
 
-### Running the Application
+## 📂 Database Setup
+
+### academicManagerPostgres.sql
+The `academicManagerPostgres.sql` file contains the SQL scripts needed to set up the PostgreSQL database for the Academic Manager application. It includes table definitions, constraints, and initial seed data required for the application to function correctly.
+
+To set up the database:
+
+1. Create a PostgreSQL database named `academic_manager`.
+2. Run the `academicManagerPostgres.sql` script to create the necessary tables and insert sample data.
+3. 
+   ```bash
+   psql -U your_username -d academic_manager -f path_to_academicManagerPostgres.sql
+
+## Running the Application
 
 1. Start the server:
     ```bash
