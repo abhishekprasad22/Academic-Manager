@@ -173,12 +173,13 @@ document.addEventListener('DOMContentLoaded', function () {
         return rows.join('');
     }
 
-    // Function to calculate and display attendance percentage
     window.calculatePercentage = (studentId) => {
         const number1 = parseFloat(document.getElementById(`a${studentId}`).value);
         const number2 = parseFloat(document.getElementById(`b${studentId}`).value);
         const resultField = document.getElementById(`result${studentId}`);
         
+        console.log(`number1: ${number1}, number2: ${number2}, resultField: ${resultField}`);
+    
         if (isNaN(number1) || isNaN(number2) || number2 === 0) {
             alert("Please enter valid numbers.");
             return;

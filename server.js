@@ -4,7 +4,7 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import pkg from "pg"; 
 import path from 'path';
-import ejs from "ejs"; // Import ejs package
+import ejs from "ejs"; 
 
 const { Pool } = pkg;
 
@@ -15,10 +15,10 @@ const port = 3000;
 
 // PostgreSQL connection configuration
 const pool = new Pool({
-  user: 'myuser', 
+  user: 'postgres',
   host: 'localhost', 
-  database: 'myuser', 
-  password: 'mypassword', 
+  database: 'AcademicManager', 
+  password: 'Abhishek@2002', 
   port: 5432, 
 });
 
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set EJS as the templating engine
 app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, 'views')); // Make sure the 'views' directory path is correct
+app.set('views', path.join(__dirname, 'views')); 
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
