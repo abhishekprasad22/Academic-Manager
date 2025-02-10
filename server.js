@@ -5,6 +5,9 @@ import { fileURLToPath } from "url";
 import pkg from "pg"; 
 import path from 'path';
 import ejs from "ejs"; 
+import env from "dotenv";
+
+
 
 const { Pool } = pkg;
 
@@ -12,14 +15,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const port = 3000;
+env.config();
+
 
 // PostgreSQL connection configuration
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost', 
-  database: 'AcademicManager', 
-  password: 'Abhishek@2002', 
-  port: 5432, 
+  user: process.env.PG_USER,
+  host: process.env.PG_HOST, 
+  database: process.env.PG_DATABASE, 
+  password: process.env.PG_PASSWORD, 
+  port: process.env.PG_PORT, 
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));
