@@ -1,6 +1,6 @@
 # Academic Manager 📚🎓
 
-**Academic Manager** is a web application designed to enhance student-teacher interactions by simplifying subject management and academic tracking. It provides an intuitive interface for managing subjects, tracking progress, and facilitating communication.
+**Academic Manager** is a web application designed to enhance student-teacher interactions by simplifying subject management and academic tracking. It provides an intuitive interface for managing subjects, assignments, and academic progress.
 
 ---
 
@@ -78,28 +78,16 @@ Follow these steps to set up the project locally:
 ## 📂 Database Setup
 
 ### academicManagerPostgres.sql
-The `academicManagerPostgres.sql` file contains the SQL scripts needed to set up the PostgreSQL database for the Academic Manager application. It includes table definitions, constraints, and initial seed data required for the application to function correctly.
+The `academicManagerPostgres.sql` file contains the SQL scripts needed to set up the PostgreSQL database for the Academic Manager application. It includes table definitions, constraints, and initial data.
 
 To set up the database:
 
 1. Create a PostgreSQL database named `academic_manager`.
 2. Run the `academicManagerPostgres.sql` script to create the necessary tables and insert sample data.
 3. 
-   ```bash
-   psql -U your_username -d academic_manager -f path_to_academicManagerPostgres.sql
-
-## Running the Application
-
-1. Start the server:
     ```bash
-    npm start
-    ```
-
-2. Open your browser and navigate to:
-    ```arduino
-    http://localhost:3000
-    ```
----
+    psql -U your_username -d academic_manager -f path_to_academicManagerPostgres.sql
+    
 
 ## 🏆 Future Enhancements
 
@@ -109,21 +97,6 @@ To set up the database:
 
 ---
 
-## 🧪 Testing
-
-To ensure the application functions correctly, follow these steps:
-
-1. Install a testing framework like Mocha or Jest:
-    ```bash
-    npm install --save-dev jest
-    ```
-
-2. Run test cases:
-    ```bash
-    npm test
-    ```
-
----
 
 ## 📫 Contact
 
@@ -152,6 +125,14 @@ Contributions are welcome! Here's how you can help:
     git push origin feature/your-feature-name
     ```
 5. Create a pull request.
+
+---
+
+## 🎥 Demo
+
+Watch the demo video below to see Academic Manager in action:
+
+[![Academic Manager Demo](https://img.youtube.com/vi/DzYXHfHpuog/0.jpg)](https://youtu.be/DzYXHfHpuog)
 
 ---
 
